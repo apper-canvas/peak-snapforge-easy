@@ -1,0 +1,222 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+/* React Toastify Styles */
+@import 'react-toastify/dist/ReactToastify.css';
+
+/* Custom toast styling */
+.Toastify__toast {
+  background: theme('colors.surface.800');
+  color: theme('colors.surface.100');
+  border-radius: 8px;
+  padding: 12px 16px;
+  box-shadow: 0 4px 16px rgba(0, 0, 0, 0.15);
+  border: 1px solid theme('colors.surface.700');
+  font-family: 'Inter', sans-serif;
+  font-size: 14px;
+  min-height: 48px;
+}
+
+.Toastify__toast--success {
+  background: linear-gradient(135deg, theme('colors.green.600'), theme('colors.green.700'));
+}
+
+.Toastify__toast--error {
+  background: linear-gradient(135deg, theme('colors.red.600'), theme('colors.red.700'));
+}
+
+.Toastify__toast--warning {
+  background: linear-gradient(135deg, theme('colors.yellow.600'), theme('colors.yellow.700'));
+}
+
+.Toastify__toast--info {
+  background: linear-gradient(135deg, theme('colors.blue.600'), theme('colors.blue.700'));
+}
+
+.Toastify__progress-bar {
+  background: rgba(255, 255, 255, 0.3);
+}
+
+/* Custom scrollbar styling */
+::-webkit-scrollbar {
+  width: 8px;
+}
+
+::-webkit-scrollbar-track {
+  background: theme('colors.surface.900');
+}
+
+::-webkit-scrollbar-thumb {
+  background: theme('colors.surface.600');
+  border-radius: 4px;
+}
+
+::-webkit-scrollbar-thumb:hover {
+  background: theme('colors.surface.500');
+}
+
+/* Base styles */
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+body {
+  font-family: 'Inter', sans-serif;
+  background: theme('colors.surface.900');
+  color: theme('colors.surface.100');
+  overflow-x: hidden;
+}
+
+/* Canvas image smoothing */
+canvas {
+  image-rendering: -webkit-optimize-contrast;
+  image-rendering: crisp-edges;
+}
+
+/* Disable text selection on UI elements */
+.no-select {
+  -webkit-user-select: none;
+  -moz-user-select: none;
+  -ms-user-select: none;
+  user-select: none;
+}
+
+/* Smooth transitions for all interactive elements */
+button, input, select, textarea {
+  transition: all 0.15s ease-out;
+}
+
+/* Gradient text utility */
+.gradient-text {
+  background: linear-gradient(135deg, theme('colors.primary.400'), theme('colors.accent.400'));
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+  background-clip: text;
+}
+
+/* Custom range input styling */
+input[type="range"] {
+  -webkit-appearance: none;
+  appearance: none;
+  background: transparent;
+  cursor: pointer;
+}
+
+input[type="range"]::-webkit-slider-track {
+  background: theme('colors.surface.700');
+  height: 4px;
+  border-radius: 2px;
+}
+
+input[type="range"]::-webkit-slider-thumb {
+  -webkit-appearance: none;
+  appearance: none;
+  height: 16px;
+  width: 16px;
+  border-radius: 50%;
+  background: linear-gradient(135deg, theme('colors.primary.500'), theme('colors.accent.500'));
+  cursor: pointer;
+  box-shadow: 0 2px 8px rgba(0, 0, 0, 0.3);
+}
+
+input[type="range"]::-moz-range-track {
+  background: theme('colors.surface.700');
+  height: 4px;
+  border-radius: 2px;
+  border: none;
+}
+
+input[type="range"]::-moz-range-thumb {
+  height: 16px;
+  width: 16px;
+  border-radius: 50%;
+  background: linear-gradient(135deg, theme('colors.primary.500'), theme('colors.accent.500'));
+  cursor: pointer;
+  border: none;
+  box-shadow: 0 2px 8px rgba(0, 0, 0, 0.3);
+}
+
+/* File input styling */
+input[type="file"] {
+  display: none;
+}
+
+/* Dragging states */
+.drag-over {
+  background: linear-gradient(135deg, rgba(99, 102, 241, 0.1), rgba(139, 92, 246, 0.1));
+  border-color: theme('colors.primary.500');
+}
+
+/* Loading spinner */
+.spinner {
+  border: 2px solid theme('colors.surface.700');
+  border-top: 2px solid theme('colors.primary.500');
+  border-radius: 50%;
+  animation: spin 1s linear infinite;
+}
+
+@keyframes spin {
+  0% { transform: rotate(0deg); }
+  100% { transform: rotate(360deg); }
+}
+
+/* Glassmorphism effect */
+.glass {
+  backdrop-filter: blur(10px);
+  -webkit-backdrop-filter: blur(10px);
+  background: rgba(30, 41, 59, 0.8);
+  border: 1px solid rgba(255, 255, 255, 0.1);
+}
+
+/* Hover glow effect */
+.hover-glow:hover {
+  box-shadow: 0 0 20px rgba(99, 102, 241, 0.3);
+}
+
+/* Canvas container */
+.canvas-container {
+  position: relative;
+  display: inline-block;
+  border: 1px solid theme('colors.surface.700');
+  border-radius: 8px;
+  overflow: hidden;
+}
+
+/* Filter preview styling */
+.filter-preview {
+  position: relative;
+  overflow: hidden;
+  border-radius: 6px;
+  cursor: pointer;
+  transition: all 0.15s ease-out;
+}
+
+.filter-preview:hover {
+  transform: scale(1.05);
+  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.3);
+}
+
+.filter-preview.active {
+  border-color: theme('colors.primary.500');
+  box-shadow: 0 0 0 2px rgba(99, 102, 241, 0.3);
+}
+
+/* Adjustment slider container */
+.adjustment-slider {
+  position: relative;
+  width: 100%;
+}
+
+.adjustment-slider .slider-fill {
+  position: absolute;
+  top: 50%;
+  left: 0;
+  height: 4px;
+  background: linear-gradient(90deg, theme('colors.primary.500'), theme('colors.accent.500'));
+  border-radius: 2px;
+  transform: translateY(-50%);
+  pointer-events: none;
+}
